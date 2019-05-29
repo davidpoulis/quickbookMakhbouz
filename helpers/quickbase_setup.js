@@ -1,6 +1,4 @@
-/**
- * Created by sram on 7/10/15.
- */
+
 
 var PropertyReader  = require('properties-reader');
 var properties      = PropertyReader("./properties");

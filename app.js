@@ -14,7 +14,7 @@ var quickbase     = require('./routes/quickbase_route');
 var mongoose      = require('mongoose');
 var passport      = require('passport');
 var IntuitStrategy = require('passport-intuit').Strategy;
-
+require('dotenv').config()
 var app = express();
 
 // view engine setup
@@ -22,13 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
-// Passport session setup.
-//   To support persistent login sessions, Passport needs to be able to
-//   serialize users into and deserialize users out of the session.  Typically,
-//   this will be as simple as storing the user ID when serializing, and finding
-//   the user by ID when deserializing.  However, since this example does not
-//   have a database of user records, the complete Intuit profile is serialized
-//   and deserialized.
+
 passport.serializeUser(function(user, done) {
     done(null, user);
 });
@@ -47,12 +41,9 @@ passport.use(new IntuitStrategy({
         // asynchronous verification, for effect...
         process.nextTick(function () {
 
-            // To keep the example simple, the user's Intuit profile is returned to
-            // represent the logged-in user.  In a typical application, you would want
-            // to associate the Intuit account with a user record in your database,
-            // and return that user instead.
+   
             profile.identifier = identifier;
-           // console.log ("+++++", profile);
+          
             return done(null, profile);
         });
     }
@@ -69,7 +60,7 @@ app.use(session({secret: 'smith', resave: false, saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-//app.use(router());
+
 
 app.use('/', routes); // default to index.js
 app.use ('/quickbooks',quickbooks);

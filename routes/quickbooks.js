@@ -1,9 +1,4 @@
-/**
- * Created by sram on 7/6/15.
- */
-/**
- * Created by sram on 7/6/15.
- */
+
 var express     = require('express');
 var request     = require('request');
 var qs          = require ('querystring');
@@ -38,7 +33,7 @@ router.get('/', function (req,res,next) {
 
     var email = req.user.emails[0].value;
     req.session.email = email;
-    console.log (req.session.email);
+    console.log(req.session.email);
 
     if (email == undefined) {
         console.log("email is empty");

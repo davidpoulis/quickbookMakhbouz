@@ -1,6 +1,3 @@
-/**
- * Created by sram on 7/10/15.
- */
 
 
 var mongoose = require('mongoose');

@@ -1,10 +1,4 @@
-/**
- * @file Node.js client for QuickBooks V3 API
- * @name node-quickbooks
- * @author Michael Cohen <michael_cohen@intuit.com>
- * @license ISC
- * @copyright 2014 Michael Cohen
- */
+
 
 var request = require('request'),
     uuid    = require('node-uuid'),

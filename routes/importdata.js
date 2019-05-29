@@ -1,7 +1,3 @@
-/**
- * Created by sram on 7/9/15.
- */
-
 
 /**
  * This is the place where we read data out of QuickBooks
@@ -18,7 +14,7 @@ var maptoqbase      = require ('../helpers/maptoqbase');
 
 var router = express.Router();
 
-var app                   = require('../app');
+var app  = require('../app');
 
 var consumerKey    = properties.get('consumerKey'),
     consumerSecret = properties.get('consumerSecret');
@@ -31,21 +27,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/accounts', function(req,res,next) {
-   //var qbo = req.session.qbo;
-    //console.log ("in accounts++++ with qbo", qbo);
+  
 
-    var qboauth         = qboauth_module.qboAuth();
+    var qboauth= qboauth_module.qboAuth();
 
-    console.log ("new QuickBooks Object", qboauth);
+    console.log("new QuickBooks Object", qboauth);
 
     qboauth.findAccounts(function (_, accounts) {
         req.session.accounts = accounts;
-
-
-        //console.log(accounts);
-        //accounts.QueryResponse.Account.forEach(function (account) {
-          //  console.log(account.Name)
-        //});
         res.render("qbodatadisplay", { accounts: accounts});
     });
 });
