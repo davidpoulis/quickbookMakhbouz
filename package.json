@@ -17,7 +17,7 @@
     "jade": "~1.11.0",
     "mocha": "6.0.2",
     "moment": "2.24.0",
-    "mongoose": "5.4.20",
+    "mongoose": "5.7.5",
     "morgan": "~1.9.1",
     "node-quickbooks": "2.0.29",
     "node-uuid": "*",
