@@ -30,7 +30,7 @@
     "request-debug": "0.2.0",
     "serve-favicon": "~2.5.0",
     "superagent": "4.1.0",
-    "underscore": "1.9.1",
+    "underscore": "1.12.1",
     "uuid": "*"
   }
 }
